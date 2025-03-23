@@ -214,7 +214,10 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
     protected void onStop() {
         super.onStop();
         FirebaseAuth.getInstance().removeAuthStateListener(this);
-        adapter.stopListening();
+        if(adapter != null) {
+            adapter.stopListening();
+        }
+
     }
 
 
